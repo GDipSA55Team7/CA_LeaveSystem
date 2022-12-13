@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 
 public class OvertimeApplication {
 	
-	public String id; //
+	public Long id; //
 	public Staff employee;
 	public LocalDateTime startDateTime; //
 	public LocalDateTime endDateTime; //
