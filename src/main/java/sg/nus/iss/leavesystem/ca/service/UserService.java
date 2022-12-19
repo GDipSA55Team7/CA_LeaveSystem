@@ -8,9 +8,14 @@ public interface UserService {
 	List<User> findAllUsers();
 	User findUser(Long userId);
 	User createUser(User user);	
+<<<<<<< HEAD
   	User authenticate(String userName,String password);
 	Boolean deactivateUser(User user);
 	Boolean activateUser(User user);
+=======
+  User authenticate(String userName,String password);
+	Boolean deactivateUser(User user);
+>>>>>>> Manager
 	User findUserByStaffID(Long staffId);
 	User findUserByStaffID(String staffId);
 }

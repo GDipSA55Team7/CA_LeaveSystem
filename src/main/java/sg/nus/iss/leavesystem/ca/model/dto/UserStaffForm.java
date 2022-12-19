@@ -3,12 +3,16 @@ package sg.nus.iss.leavesystem.ca.model.dto;
 import java.util.ArrayList;
 import java.util.List;
 
+<<<<<<< HEAD
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+=======
+>>>>>>> Manager
 import sg.nus.iss.leavesystem.ca.model.Role;
 
 public class UserStaffForm {
 	private Long userId;
+<<<<<<< HEAD
 
 	@NotBlank(message = "Username is required")
 	@Size(min = 3, max = 25, message = "Name must be 3-25 characters long")
@@ -19,6 +23,13 @@ public class UserStaffForm {
 
 	private String employeeId = "";
 	private List<Role> roles = new ArrayList<>();
+=======
+	private String userName = "";
+	private String password = "";
+	private String employeeId = "";
+	private List<Role> roles = new ArrayList<>();
+
+>>>>>>> Manager
 	private String staffId = "";
 	private String firstName = "";
 	private String lastName = "";

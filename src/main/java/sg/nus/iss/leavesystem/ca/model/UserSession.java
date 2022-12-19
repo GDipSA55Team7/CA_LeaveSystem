@@ -1,13 +1,17 @@
 package sg.nus.iss.leavesystem.ca.model;
 
+<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.List;
 
+=======
+>>>>>>> Manager
 public class UserSession {
 	
     private long staffId;
 
     private String userName;
+<<<<<<< HEAD
     
     private List<String> userRoles = new ArrayList<>();
 
@@ -22,6 +26,10 @@ public class UserSession {
 	}
 
 	public long getStaffId() {
+=======
+
+    public long getStaffId() {
+>>>>>>> Manager
         return staffId;
     }
 

@@ -1,18 +1,28 @@
 package sg.nus.iss.leavesystem.ca.interceptor;
 
 import java.io.IOException;
+<<<<<<< HEAD
 import java.util.List;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
+=======
+
+import org.springframework.stereotype.Component;
+import org.springframework.web.servlet.HandlerInterceptor;
+>>>>>>> Manager
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+<<<<<<< HEAD
 import sg.nus.iss.leavesystem.ca.model.Role;
 import sg.nus.iss.leavesystem.ca.model.User;
 import sg.nus.iss.leavesystem.ca.model.UserSession;
+=======
+import sg.nus.iss.leavesystem.ca.model.User;
+>>>>>>> Manager
 
 @Component
 public class SessionInterceptor implements HandlerInterceptor {
@@ -51,5 +61,8 @@ public class SessionInterceptor implements HandlerInterceptor {
 			}
 		}
 	}
+<<<<<<< HEAD
 	
+=======
+>>>>>>> Manager
 }

@@ -62,6 +62,7 @@ public class StaffController {
 	}
 
 	@PostMapping("/create")
+<<<<<<< HEAD
 	public String newStaffPage(@Valid @ModelAttribute("userStaffForm") UserStaffForm staff, BindingResult result,
 			Model model) {
 		if (result.hasErrors()) {
@@ -74,6 +75,9 @@ public class StaffController {
 			model.addAttribute("managers", staffService.findAllManagers());
 			return "staff-new";
 		}
+=======
+	public String newStaffPage(@ModelAttribute UserStaffForm staff, BindingResult result) {
+>>>>>>> Manager
 		Staff newStaff = new Staff();
 		newStaff.setUser(userService.findUser(staff.getUserId()));
 		newStaff.setFirstName(staff.getFirstName());
@@ -81,8 +85,11 @@ public class StaffController {
 		newStaff.setEmailAdd(staff.getEmailAdd());
 		newStaff.setManager(staffService.findStaffByID(staff.getManagerId()));
 		newStaff.setLeaveScheme(leaveSchemeService.getLeaveSchemeByID(Long.parseLong(staff.getLeaveSchemeId())));
+<<<<<<< HEAD
 		newStaff.setAnnualLeaveBalance(staff.getAnnualLeaveBalance());
 		newStaff.setMedicalLeaveBalance(staff.getMedicalLeaveBalance());
+=======
+>>>>>>> Manager
 		staffService.createStaff(newStaff);
 		return "redirect:/admin/staff/list";
 	}
@@ -143,7 +150,11 @@ public class StaffController {
 	}
 
 	@GetMapping("/deactivate/{id}")
+<<<<<<< HEAD
 	public String deactivateStaff(@PathVariable("id") String id) {
+=======
+	public String deleteStaff(@PathVariable("id") String id) {
+>>>>>>> Manager
 		Staff staff = staffService.findStaffByID(id);
 		staffService.deactivateStaff(staff);
 		User user = userService.findUserByStaffID(id);
@@ -154,6 +165,7 @@ public class StaffController {
 
 		return "redirect:/admin/staff/list";
 	}
+<<<<<<< HEAD
 
 	@GetMapping("/activate/{id}")
 	public String activateStaff(@PathVariable("id") String id) {
@@ -167,4 +179,6 @@ public class StaffController {
 
 		return "redirect:/admin/staff/list";
 	}
+=======
+>>>>>>> Manager
 }

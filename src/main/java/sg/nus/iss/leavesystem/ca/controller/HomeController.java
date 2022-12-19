@@ -39,8 +39,13 @@ public class HomeController {
         UserSession userSession = new UserSession();
         userSession.setStaffId(dbUser.getEmployee().getId());
         userSession.setUserName(dbUser.getUserName());
+<<<<<<< HEAD
         userSession.setUserRoles(dbUser.getRoleSet());
         session.setAttribute("user", userSession);
+=======
+        session.setAttribute("user", userSession);
+
+>>>>>>> Manager
         return "redirect:/LeaveApplication";
     }
     

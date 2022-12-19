@@ -1,5 +1,6 @@
 package sg.nus.iss.leavesystem.ca.util;
 
+<<<<<<< HEAD
 import java.time.DayOfWeek;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -14,6 +15,13 @@ public class Util {
 
     }
 
+=======
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class Util {
+
+>>>>>>> Manager
     public static String convertDateToString(LocalDateTime localDate) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         return localDate.format(formatter);
@@ -25,6 +33,7 @@ public class Util {
         String dateStr = args[2] + "-" + args[1] + "-" + args[0] + " 00:00";
         return LocalDateTime.parse(dateStr, formatter);
     }
+<<<<<<< HEAD
 
     public static Boolean isWeekend(LocalDateTime date) {
         if (date.getDayOfWeek() == DayOfWeek.SATURDAY || date.getDayOfWeek() == DayOfWeek.SUNDAY)
@@ -60,3 +69,6 @@ public class Util {
         return false;
     }
 }
+=======
+}
+>>>>>>> Manager

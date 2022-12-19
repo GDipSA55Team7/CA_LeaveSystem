@@ -8,25 +8,37 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+<<<<<<< HEAD
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
+=======
+import org.springframework.web.bind.annotation.GetMapping;
+>>>>>>> Manager
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import jakarta.servlet.http.HttpSession;
+<<<<<<< HEAD
 import jakarta.validation.Valid;
 import sg.nus.iss.leavesystem.ca.model.LeaveApplication;
 import sg.nus.iss.leavesystem.ca.model.LeaveApplicationForm;
 import sg.nus.iss.leavesystem.ca.model.Role;
+=======
+import sg.nus.iss.leavesystem.ca.model.LeaveApplication;
+import sg.nus.iss.leavesystem.ca.model.LeaveApplicationForm;
+>>>>>>> Manager
 import sg.nus.iss.leavesystem.ca.model.Staff;
 import sg.nus.iss.leavesystem.ca.model.UserSession;
 import sg.nus.iss.leavesystem.ca.service.LeaveApplicationService;
 import sg.nus.iss.leavesystem.ca.service.LeaveTypeService;
 import sg.nus.iss.leavesystem.ca.service.StaffService;
 import sg.nus.iss.leavesystem.ca.util.Util;
+<<<<<<< HEAD
 import sg.nus.iss.leavesystem.ca.validator.LeaveApplicationFormValidator;
+=======
+>>>>>>> Manager
 
 @Controller
 public class LeaveApplicationController {
@@ -37,6 +49,7 @@ public class LeaveApplicationController {
     LeaveTypeService leaveTypeService;
     @Autowired
     LeaveApplicationService leaveApplicationService;
+<<<<<<< HEAD
     @Autowired
     private LeaveApplicationFormValidator leaveFormValidator;
 
@@ -54,6 +67,13 @@ public class LeaveApplicationController {
         	System.out.println(role);
         }
 //		model.addAttribute("userSession", userSession);
+=======
+
+    @GetMapping(value={"/LeaveApplication", "/"})
+    public String Main(HttpSession session) {
+//        UserSession userSession = (UserSession) session.getAttribute("user");
+//
+>>>>>>> Manager
 //        if (userSession == null)
 //            return "redirect:/login";
         return "LeaveApplication";
@@ -130,6 +150,7 @@ public class LeaveApplicationController {
     }
 
     @PostMapping("/saveLeave")
+<<<<<<< HEAD
     public String SaveLeave(@ModelAttribute("leaveForm") @Valid LeaveApplicationForm leaveForm, BindingResult result,
             HttpSession session, Model model) {
         UserSession userSession = (UserSession) session.getAttribute("user");
@@ -144,6 +165,15 @@ public class LeaveApplicationController {
         }
 
         var staff = this.staffService.findById(userSession.getStaffId());
+=======
+    public String SaveLeave(@ModelAttribute("leaveForm") LeaveApplicationForm leaveForm, BindingResult result,
+            HttpSession session,Model model) {
+        UserSession userSession = (UserSession) session.getAttribute("user");
+//        if (userSession == null)
+//            return "redirect:/login";
+            
+        var staff = this.staffService.FindByUserId(userSession.getStaffId());
+>>>>>>> Manager
         LeaveApplication leaveApplication = new LeaveApplication();
         leaveApplication.setTypeOfLeave(leaveForm.getLeaveType());
         leaveApplication.setEmployee(staff);
@@ -159,18 +189,28 @@ public class LeaveApplicationController {
         leaveApplication.setDateReviewed(LocalDateTime.now());
         leaveApplication.setMgrRemarks("");
 
+<<<<<<< HEAD
         if (leaveApplication.getEndDate().isBefore(leaveApplication.getStartDate())) {
+=======
+        if(leaveApplication.getEndDate().isBefore(leaveApplication.getStartDate()))
+        {
+>>>>>>> Manager
             model.addAttribute("leaveForm", leaveForm);
             model.addAttribute("leaveTypeList", leaveTypeService.GetAll());
             model.addAttribute("coveringStaffList", staffService.findAllStaff());
             return "AddLeave";
         }
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> Manager
         this.leaveApplicationService.CreateApplication(leaveApplication);
         return "redirect:/LeaveApplication";
     }
 
     @PostMapping("/updateLeave")
+<<<<<<< HEAD
     public String UpdateLeave(@ModelAttribute("leaveForm") @Valid LeaveApplicationForm leaveForm, BindingResult result,
             HttpSession session, Model model) {
         UserSession userSession = (UserSession) session.getAttribute("user");
@@ -183,6 +223,14 @@ public class LeaveApplicationController {
             return "EditLeave";
         }
         var staff = this.staffService.findById(userSession.getStaffId());
+=======
+    public String UpdateLeave(@ModelAttribute("leaveForm") LeaveApplicationForm leaveForm, BindingResult result,
+            HttpSession session) {
+        UserSession userSession = (UserSession) session.getAttribute("user");
+//        if (userSession == null)
+//            return "redirect:/login";
+        var staff = this.staffService.FindByUserId(userSession.getStaffId());
+>>>>>>> Manager
         LeaveApplication leaveApplication = new LeaveApplication();
         leaveApplication.setId(leaveForm.getId());
         leaveApplication.setTypeOfLeave(leaveForm.getLeaveType());

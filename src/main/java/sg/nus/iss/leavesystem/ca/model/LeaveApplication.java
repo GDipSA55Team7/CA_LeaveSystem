@@ -11,7 +11,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+<<<<<<< HEAD
 import sg.nus.iss.leavesystem.ca.util.Util;
+=======
+>>>>>>> Manager
 
 @Entity
 @Table(name = "leave_applications")
@@ -216,6 +219,7 @@ public class LeaveApplication {
 	public void setMgrRemarks(String mgrRemarks) {
 		this.mgrRemarks = mgrRemarks;
 	}
+<<<<<<< HEAD
 
 	public String getPeriod()
 	{
@@ -237,4 +241,6 @@ public class LeaveApplication {
 		
 		return String.valueOf(durationInDay);
 	}
+=======
+>>>>>>> Manager
 }

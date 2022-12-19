@@ -25,12 +25,21 @@ public class UserServiceImpl implements UserService {
 	public List<User> findAllUsers() {
 		return userRepository.findAll();
 	}
+<<<<<<< HEAD
 
 	@Override
 	public User authenticate(String userName, String password) {
 		return userRepository.FindByUserNameAndPassword(userName, password);
 	}
 
+=======
+	
+  @Override
+  public User authenticate(String userName, String password) {
+      return userRepository.FindByUserNameAndPassword(userName, password);
+  }
+    
+>>>>>>> Manager
 	@Transactional
 	@Override
 	public User findUser(Long userId) {
@@ -55,6 +64,7 @@ public class UserServiceImpl implements UserService {
 		user.setIsActive(false);
 		return user.getIsActive();
 	}
+<<<<<<< HEAD
 
 	@Transactional
 	@Override
@@ -62,4 +72,6 @@ public class UserServiceImpl implements UserService {
 		user.setIsActive(true);
 		return user.getIsActive();
 	}
+=======
+>>>>>>> Manager
 }

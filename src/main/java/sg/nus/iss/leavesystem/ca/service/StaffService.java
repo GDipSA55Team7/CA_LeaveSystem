@@ -29,9 +29,12 @@ public interface StaffService {
 	List<StaffForm> getStaffFormManagers();
 
 	Boolean deactivateStaff(Staff staff);
+<<<<<<< HEAD
 	
 	Boolean activateStaff(Staff staff);
 
 	Staff findById(long id);
+=======
+>>>>>>> Manager
 
 }

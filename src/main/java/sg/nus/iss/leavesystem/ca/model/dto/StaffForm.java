@@ -8,20 +8,30 @@ public class StaffForm {
 	private String emailAdd = "";
 	private String managerId = "";
 	private String leaveSchemeId = "";
+<<<<<<< HEAD
 	private String isActive = "true";
+=======
+>>>>>>> Manager
 
 	public StaffForm() {
 	}
 
 	public StaffForm(String staffId, String firstName, String lastName, String emailAdd, String managerId,
+<<<<<<< HEAD
 			String leaveSchemeId, String isActive) {
+=======
+			String leaveSchemeId) {
+>>>>>>> Manager
 		this.staffId = staffId;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.emailAdd = emailAdd;
 		this.managerId = managerId;
 		this.leaveSchemeId = leaveSchemeId;
+<<<<<<< HEAD
 		this.isActive = isActive;
+=======
+>>>>>>> Manager
 	}
 
 	public String getLeaveSchemeId() {
@@ -71,6 +81,7 @@ public class StaffForm {
 	public void setStaffId(String id) {
 		this.staffId = id;
 	}
+<<<<<<< HEAD
 
 	public String getIsActive() {
 		return isActive;
@@ -79,4 +90,6 @@ public class StaffForm {
 	public void setIsActive(String isActive) {
 		this.isActive = isActive;
 	}
+=======
+>>>>>>> Manager
 }

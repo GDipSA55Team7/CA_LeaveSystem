@@ -40,11 +40,19 @@ public class StaffServiceImpl implements StaffService {
 		Long staffId = Long.parseLong(id);
 		return staffRepository.findById(staffId).orElse(null);
 	}
+<<<<<<< HEAD
 
 	@Override
 	public Staff FindByUserId(long userId) {
 		return staffRepository.FindByUserId(userId).get();
 	}
+=======
+	
+    @Override
+    public Staff FindByUserId(long userId) {
+        return staffRepository.FindByUserId(userId).get();
+    }
+>>>>>>> Manager
 
 	@Transactional
 	@Override
@@ -69,7 +77,11 @@ public class StaffServiceImpl implements StaffService {
 		staff.setLeaveScheme(leaveScheme);
 		Staff manager = findStaffByID(userStaffForm.getManagerId());
 		staff.setManager(manager);
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> Manager
 		user.setRoleSet(userStaffForm.getRoles());
 
 		return staffRepository.saveAndFlush(staff);
@@ -92,6 +104,7 @@ public class StaffServiceImpl implements StaffService {
 			if (s.getManager() != null) {
 				managerId = s.getManager().getId().toString();
 			}
+<<<<<<< HEAD
 			staffList.add(
 					new StaffForm(
 							s.getId().toString(),
@@ -101,6 +114,18 @@ public class StaffServiceImpl implements StaffService {
 							managerId,
 							s.getLeaveScheme().getId().toString(),
 							Boolean.toString(s.getIsActive())));
+=======
+			if (s.getIsActive()) {
+				staffList.add(
+						new StaffForm(
+								s.getId().toString(),
+								s.getFirstName(),
+								s.getLastName(),
+								s.getEmailAdd(),
+								managerId,
+								s.getLeaveScheme().getId().toString()));
+			}
+>>>>>>> Manager
 		}
 		return staffList;
 	}
@@ -122,8 +147,12 @@ public class StaffServiceImpl implements StaffService {
 							s.getLastName(),
 							s.getEmailAdd(),
 							managerId,
+<<<<<<< HEAD
 							s.getLeaveScheme().getId().toString(),
 							Boolean.toString(s.getIsActive())));
+=======
+							s.getLeaveScheme().getId().toString()));
+>>>>>>> Manager
 		}
 		return staffList;
 	}
@@ -134,6 +163,7 @@ public class StaffServiceImpl implements StaffService {
 		staff.setIsActive(false);
 		return staff.getIsActive();
 	}
+<<<<<<< HEAD
 
 	@Transactional
 	@Override
@@ -146,4 +176,6 @@ public class StaffServiceImpl implements StaffService {
 	public Staff findById(long id) {
 		return this.staffRepository.findById(id).get();
 	}
+=======
+>>>>>>> Manager
 }
